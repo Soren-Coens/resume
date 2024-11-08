@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 import { Component } from "react";
 import Headermenu from "./genericComponents/Headermenu/Headermenu";
 import MainFooter from "./genericComponents/MainFooter/MainFooter";

@@ -25,11 +25,16 @@ export default class Person extends Component {
 							</div>
 						</div>
 						<div className={[css["box"], css["experience"]].join(" ")}>
-							<h2>Experience</h2>
-							{this.props.blok.experiences.map((nestedBlok) => (
-								<StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
-							))}
+  							<h2>Experience</h2>
+  							{this.props.blok.experiences && this.props.blok.experiences.length > 0 ? (
+ 							   this.props.blok.experiences.map((nestedBlok) => (
+							      <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+							    ))
+ 							 ) : (
+								<p>No experiences found.</p> // Optional: Message when there are no experiences
+							)}
 						</div>
+
 						<div className={[css["box"], css["foot"]].join(" ")}>
 							<div>&copy; {this.props.blok.firstname} {this.props.blok.lastname} {new Date().getFullYear()}</div>
 						</div>
